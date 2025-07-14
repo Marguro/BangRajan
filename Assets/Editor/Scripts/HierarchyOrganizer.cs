@@ -13,6 +13,7 @@ public static class HierarchyOrganizer
         CreateEmptySpace();
         CreateGameobject("MANAGERS");
         CreateEmptySpace();
+        CreateEmptySpace();
     } 
     static void CreateEmptySpace(string name = " ")
     {
