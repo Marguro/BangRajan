@@ -21,7 +21,8 @@ namespace Enemies
 
             Vector2 wallCenter = wallCollider.bounds.center;
             Vector2 wallSize = wallCollider.bounds.size;
-
+            
+            //Random targetPoint
             float randomX = UnityEngine.Random.Range(-wallSize.x / 2, wallSize.x / 2);
             float randomY = UnityEngine.Random.Range(-wallSize.y / 2, wallSize.y / 2);
             _targetPoint = wallCenter + new Vector2(randomX, randomY);
@@ -39,15 +40,5 @@ namespace Enemies
             Vector2 targetPosition = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
             transform.position = targetPosition;
         }
-        
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.CompareTag("Wall"))
-            {
-                Destroy(gameObject);
-                Debug.Log("Hit Wall");
-            }
-        }
-
     }
 }
